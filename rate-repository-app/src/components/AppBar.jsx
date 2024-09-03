@@ -7,19 +7,21 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: Constants.statusBarHeight * 2,
     paddingBottom: 10,
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
     backgroundColor: "#24292e",
-    display: "flex",
+  },
+  tab: {
     flexDirection: "row",
     alignItems: "center",
+    flex: 1,
     justifyContent: "space-between"
-  }
+  },
 });
 
 const AppBar = () => {
   return (
     <View style={styles.container}>
-      <ScrollView horizontal>
+      <ScrollView horizontal contentContainerStyle={styles.tab}>
         <Pressable>
           <Link to="/">
             <Text fontWeight="bold" fontSize="heading" color="white">
