@@ -1,12 +1,6 @@
-import { Image, StyleSheet, View } from "react-native";
+import { Image, View } from "react-native";
 import Text from "./Text";
 import theme from "../theme";
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-  },
-});
 
 const formatNumber = (number) => {
   if (number >= 1000) {
@@ -62,7 +56,7 @@ export const RepositoryItem = ({ item }) => {
           justifyContent: "space-evenly",
         }}
       >
-        <View style={{paddingBottom: 10}}>
+        <View style={{ paddingBottom: 10 }}>
           <Text style={{ textAlign: "center" }} fontWeight="bold">
             {formatNumber(stargazersCount)}
           </Text>
@@ -70,7 +64,7 @@ export const RepositoryItem = ({ item }) => {
         </View>
         <View>
           <Text style={{ textAlign: "center" }} fontWeight="bold">
-            {formatNumber(forksCount)} 
+            {formatNumber(forksCount)}
           </Text>
           <Text style={{ textAlign: "center" }}>Forks</Text>
         </View>

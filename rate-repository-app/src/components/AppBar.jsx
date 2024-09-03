@@ -1,6 +1,7 @@
-import { View, StyleSheet, Pressable } from "react-native";
+import { View, StyleSheet, Pressable, ScrollView } from "react-native";
 import Constants from "expo-constants";
 import Text from "./Text";
+import { Link } from "react-router-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -8,15 +9,30 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     paddingHorizontal: 10,
     backgroundColor: "#24292e",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between"
   }
 });
 
 const AppBar = () => {
   return (
     <View style={styles.container}>
-      <Pressable>
-        <Text fontWeight="bold" fontSize="heading" color="white">Repositories</Text>
-      </Pressable>
+      <ScrollView horizontal>
+        <Pressable>
+          <Link to="/">
+            <Text fontWeight="bold" fontSize="heading" color="white">
+              Repositories
+            </Text>
+          </Link>
+        </Pressable>
+        <Pressable>
+          <Link to="/signin">
+            <Text color="white">Sign In</Text>
+          </Link>
+        </Pressable>
+      </ScrollView>
     </View>
   );
 };
