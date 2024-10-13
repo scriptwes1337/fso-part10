@@ -1,7 +1,9 @@
 import { useMutation } from "@apollo/client";
 import { AUTHENTICATE_MUTATION } from "../graphql/mutations";
+import useAuthStorage from "../hooks/useAuthStorage";
 
 export const useSignIn = () => {
+  const authStorage = useAuthStorage();
   const [mutate, result] = useMutation(AUTHENTICATE_MUTATION);
 
   const signIn = async ({ username, password }) => {
